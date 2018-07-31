@@ -1,8 +1,7 @@
 <?php
 include_once('functions.php');
 global $privacy_responsible_type, $privacy_responsible_name, $privacy_responsible_address, $privacy_responsible_email,
-$privacy_dateModified, $privacy_page_id,
-$analytics, $mailing, $adwords, $remarketing;
+$privacy_dateModified, $privacy_page_id;
 $responsibleLink = '<a href="#titolare"><em>Titolare del trattamento dei dati personali</em></a>';
 $privacy_page_link = '<a href="'.get_permalink($privacy_page_id).'"><em>Privacy Policy</em></a>';
 $dateModified = '24/05/2018';
@@ -76,7 +75,7 @@ $dateModified = '24/05/2018';
 if(in_array('Google Analytics (Anonymized IP)', $privacy_settings) or in_array('Google Analytics', $privacy_settings)){
 ?>
 				<h4>Google Analytics <?php if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){ ?> con indirizzo IP anonimizzato<?php } ?></h4>
-				<p>Questo sito web utilizza <a href="analytics.google.com">Google Analytics</a><?php if($analytics == 'Google Analytics (Anonymized IP)'){ ?> con indirizzo IP anonimizzato<?php } ?> per raccogliere informazioni circa l'utilizzo del sito web da parte degli utenti. Google Analytics genera informazioni statistiche e di altro genere attraverso cookie (cookie di statistica), memorizzati sui computer degli utenti.</p>
+				<p>Questo sito web utilizza <a href="analytics.google.com">Google Analytics</a><?php if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){ ?> con indirizzo IP anonimizzato<?php } ?> per raccogliere informazioni circa l'utilizzo del sito web da parte degli utenti. Google Analytics genera informazioni statistiche e di altro genere attraverso cookie (cookie di statistica), memorizzati sui computer degli utenti.</p>
 <?php 
 	if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){
 ?>

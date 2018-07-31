@@ -1,7 +1,4 @@
 <?php
-// 1. Copy this folder (wp-privacy) in wp-content/themes/your-theme/
-// 2. Copy the following code in wp-content/themes/your-theme/functions.php
-// 3. Edit the variable values
 // Privacy
 $privacy_dateModified = '24/10/2017';
 $privacy_settings = array(

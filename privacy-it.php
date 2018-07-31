@@ -1,8 +1,8 @@
 <?php
 include_once('functions.php');
-global $site_url, $privacy_responsible_type, $privacy_responsible_name, $privacy_responsible_address, $privacy_responsible_email,
+global $site_url, $privacy_responsible_name, $privacy_responsible_address, $privacy_responsible_email,
 $privacy_dateModified, $cookies_page_id,
-$analytics, $mailing, $adwords, $remarketing;
+$remarketing;
 $responsibleLink = '<a href="#titolare"><em>Titolare del trattamento dei dati personali</em></a>';
 $cookieLink = '<a href="#cookie"><em>Cookie</em></a>';
 $cookies_page_link = '<a href="'.get_permalink($cookies_page_id).'"><em>Cookie Policy</em></a>';
@@ -153,7 +153,7 @@ if($numero_sedi == 1){
 				<li>consentire la <strong>fornitura dei propri servizi</strong>;</li>
 				<li><strong>gestire contatti e pagamenti</strong> eventuali: database degli utenti, invio di messaggi e ricevute o fatture;</li>
 <?php
-if($remarketing){
+	if(in_array('Remarketing', $privacy_settings)){
 ?>
 				<li>finalità di <strong>remarketing e behavioral targeting</strong>;</li>
 <?php
@@ -185,6 +185,9 @@ if($remarketing){
 				<li>per l’esecuzione degli obblighi derivanti dai rapporti contrattuali instaurati con <?php echo $privacy_responsible_name; ?> e la corretta gestione del rapporto contrattuale, nonché per l’adempimento di ogni obbligo di legge, di quanto disposto da Autorità e Organi di Vigilanza o da prassi amministrative.</li>
 			</ol>
 		</section>
+<?php
+if(in_array('WordPress Comments', $privacy_settings)){
+?>
 		<section id="commenti">
 			<h1 class="h2">Commenti</h1>
 			<p><strong>Quando lasci un commento sul sito</strong>, raccogliamo i dati inseriti nel modulo dei commenti oltre all'indirizzo IP del visitatore e la stringa dello user agent del browser per facilitare il rilevamento dello spam.</p>
@@ -192,6 +195,10 @@ if($remarketing){
 			<p>I commenti dei visitatori possono essere controllati attraverso un servizio di rilevamento automatico dello spam.</p>
 			<p><strong>Per quanto tempo conserviamo i tuoi dati:</strong> se lasci un commento, il commento e i relativi metadati vengono conservati a tempo indeterminato. È così che possiamo riconoscere e approvare automaticamente eventuali commenti successivi invece di tenerli in una coda di moderazione.</p>
 		</section>
+<?php
+}
+if(in_array('WordPress Comments', $privacy_settings) or in_array('Gravatar', $privacy_settings)){
+?>
 		<section id="gravatar">
 			<h1 class="h2">Gravatar</h1>
 			<p>
@@ -199,6 +206,9 @@ if($remarketing){
 				Luogo del trattamento: Usa, <a href="https://automattic.com/privacy/">Privacy Policy</a>.
 			</p>
 		</section>
+<?php
+}
+?>
 		<section id="media">
 			<h1 class="h2">Media</h1>
 			<p>Se carichi immagini su questo sito web, dovresti evitare di caricare immagini che includono i dati di posizione incorporati (EXIF GPS). I visitatori del sito web possono scaricare ed estrarre qualsiasi dato sulla posizione dalle immagini sul sito web.</p>
@@ -208,6 +218,9 @@ if($remarketing){
 			<p>Le pagine di questo sito possono includere contenuti incorporati (ad esempio video, immagini, articoli ecc.). I contenuti incorporati da altri siti web si comportano esattamente allo stesso modo come se il visitatore avesse visitato l'altro sito web.</p>
 			<p>Questi siti web possono raccogliere dati su di te, usare cookie, integrare ulteriori tracciamenti di terze parti e monitorare l'interazione con quel contenuto incorporato, incluso il tracciamento della tua interazione con il contenuto incorporato se hai un account e hai effettuato l'accesso a quel sito web.</p>
 		</section>
+<?php
+if(in_array('Newsletter', $privacy_settings) or in_array('MailChimp', $privacy_settings)){
+?>
 		<section id="newsletter">
 			<h1 class="h2">Newsletter</h1>
 			<p><strong>L’iscrizione alla newsletter</strong> avviene solo in seguito al consenso da parte dell’utente, espresso tramite spunta dell’apposito campo (checkbox).</p>
@@ -222,7 +235,7 @@ if($remarketing){
 				<li>questionari finalizzati all’elaborazione di studi e ricerche di mercato.</li>
 			</ul>
 <?php
-if(in_array('MailChimp', $privacy_settings)){
+	if(in_array('MailChimp', $privacy_settings)){
 ?>
 		<section>
 			<h1 class="h2">Mailchimp</h1>
@@ -231,7 +244,7 @@ if(in_array('MailChimp', $privacy_settings)){
 			<p>Luogo del trattamento: Usa. <a href="https://mailchimp.com/legal/privacy/">Privacy Policy</a>.</p>
 		</section>
 <?php
-} else {
+	} else {
 ?>
 		<section>
 			<h1 class="h3">WordPress.org</h1>
@@ -240,10 +253,11 @@ if(in_array('MailChimp', $privacy_settings)){
 			<p><strong>La cancellazione dalla newsletter</strong> è possibile senza costi e in modo semplice <a href="<?php $site_url.'/login/'; ?>">accedendo dalla pagina di login</a> e eliminando il proprio utente.</p>
 		</section>
 <?php
-}
+	}
 ?>
 		</section>
 <?php
+}
 if(in_array('Tawk.to', $privacy_settings)){
 ?>
 		<section id="tawk">
@@ -258,7 +272,7 @@ if(in_array('Google Analytics (Anonymized IP)', $privacy_settings) or in_array('
 ?>
 		<section id="google-analytics">
 			<h1 class="h2">Google Analytics <?php if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){ ?> con indirizzo IP anonimizzato<?php } ?></h1>
-			<p>Questo sito web utilizza <a href="analytics.google.com">Google Analytics</a><?php if($analytics == 'Google Analytics (Anonymized IP)'){ ?> con indirizzo IP anonimizzato<?php } ?> per raccogliere informazioni circa l'utilizzo del sito web da parte degli utenti. Google Analytics genera informazioni statistiche e di altro genere attraverso cookie (cookie di statistica), memorizzati sui computer degli utenti.</p>
+			<p>Questo sito web utilizza <a href="analytics.google.com">Google Analytics</a><?php if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){ ?> con indirizzo IP anonimizzato<?php } ?> per raccogliere informazioni circa l'utilizzo del sito web da parte degli utenti. Google Analytics genera informazioni statistiche e di altro genere attraverso cookie (cookie di statistica), memorizzati sui computer degli utenti.</p>
 <?php 
 	if(in_array('Google Analytics (Anonymized IP)', $privacy_settings)){
 ?>

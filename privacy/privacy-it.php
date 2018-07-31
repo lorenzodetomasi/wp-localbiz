@@ -6,11 +6,15 @@ $remarketing;
 $responsibleLink = '<a href="#titolare"><em>Titolare del trattamento dei dati personali</em></a>';
 $cookieLink = '<a href="#cookie"><em>Cookie</em></a>';
 $cookies_page_link = '<a href="'.get_permalink($cookies_page_id).'"><em>Cookie Policy</em></a>';
-$privacy_dateModified = '24/05/2018';
+$privacy_dateModified = DateTime::createFromFormat('d/m/Y', $privacy_dateModified);
+$dateModified = DateTime::createFromFormat('d/m/Y', '24/05/2018');
+if($dateModified > $privacy_dateModified){
+ 	$privacy_dateModified = $dateModified;
+}
 ?>
 		<h2>Informativa per la tutela dei dati personali</h2>
 		<p>La presente nota informativa è resa, in conformità con molteplici ordinamenti legislativi, inclusi gli artt. 13 e 14 del Regolamento Generale per la protezione dei Dati dell’Unione Europea (<abbr class="acronym" lang="en" title="General Data Protection Regulation">GDPR</abbr>) 2016/679, d’ora in poi <em>Regolamento Privacy</em>.</p>
-		<p id="data-aggiornamento">Data di aggiornamento: <?php echo $privacy_dateModified; ?></p>
+		<p id="data-aggiornamento">Data di aggiornamento: <?php echo $privacy_dateModified->format('d/m/Y'); ?></p>
 	</header><!-- .header -->
 	<div class="body">
 		<section class="section-padding-bottom">

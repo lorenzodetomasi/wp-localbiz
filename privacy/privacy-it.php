@@ -348,6 +348,6 @@ if(in_array('YouTube', $privacy_settings)){
 		<section id="modifiche" class="section-padding-bottom">
 			<h1>Modifiche all'informativa sulla privacy</h1>
 			<p>Il <?php echo $responsibleLink; ?> si riserva il diritto di modificare, aggiornare, aggiungere o rimuovere parti della presente informativa sulla privacy a propria discrezione e in qualsiasi momento. La persona interessata è tenuta a verificare periodicamente le eventuali modifiche. Al fine di facilitare tale verifica l'informativa conterrà l'indicazione della <a href="data-aggiornamento">data di aggiornamento dell’informativa</a>. L'utilizzo del sito, dopo la pubblicazione delle modifiche, costituirà accettazione delle stesse.</p>
-			<p>Ultima modifica: <?php echo $privacy_dateModified; ?></p>
+			<p>Ultima modifica: <?php echo $privacy_dateModified->format('d/m/Y'); ?></p>
 		</section>
 	</div>

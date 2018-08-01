@@ -10,7 +10,7 @@ WordPress Templates for Organization Management:
 
 ## Install
 1. Copy all the folders in /wp-content/themes/your-theme/.
-2. Copy the php code of functions.php in wp-content/themes/your-theme/functions.php.
+2. Copy the php code of functions-addons.php in wp-content/themes/your-theme/functions.php.
 3. Edit the variable values in the copied code.
 
 ## Organization

@@ -2,7 +2,6 @@
 // #Organization
 include_once('organization/cptui.php');
 include_once('organization/acfpro.php');
-include_once('organization/functions.php');
 
 // #Locations
 include_once('locations/acfpro.php');

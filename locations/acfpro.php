@@ -1,8 +1,9 @@
 <?php
-/* 1. Locations
+/* 1. Locations Fields
  * 1.1. Fiscal Data
  * 1.2. Contacts and Opening Hours
  * 1.3. Location Privacy
+ * 2. Locations Functions
  */
 if( function_exists('acf_add_local_field_group') ):
 
@@ -428,4 +429,6 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
 endif;
+
+// Locations Functions
 ?>

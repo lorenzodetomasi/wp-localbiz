@@ -33,5 +33,4 @@ $privacy_settings = array(
 $hosting_provider = '<a href="http://www.tophost.it">TopHost.it</a>';
 //$hosting_provider = '<a href="http://www.artera.it">Artera.it</a>';
 include_once('legal/acfpro.php');
-include_once('legal/acfpro-functions.php');
 ?>

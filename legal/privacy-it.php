@@ -1,5 +1,4 @@
 <?php
-include_once('functions.php');
 global $site_url, $privacy_responsible_name, $privacy_responsible_address, $privacy_responsible_email,
 $privacy_dateModified, $cookies_page_id,
 $remarketing;

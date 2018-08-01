@@ -6,6 +6,8 @@ include_once('organization/functions.php');
 
 // #Locations
 include_once('locations/acfpro.php');
+// Uncomment if you list locations in all pages, i.e. in the footer
+// $locations = new WP_Query( array( 'post_type' => 'sedi', 'posts_per_page' => 0 ) );
 
 // #Legal
 // - Privacy

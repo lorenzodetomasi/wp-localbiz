@@ -14,7 +14,7 @@ WordPress Templates for Organization Management:
 ## Legal
 WordPress Templates for:
 - GDPR Privacy Compliance: /legal/privacy.php;
-– Cookie Policy Compliance: /legal/cookies.php;
+- Cookie Policy Compliance: /legal/cookies.php;
 - Disclaimer (Copyright, Contents): /legal/disclaimer.php.
 
 Each template has a file for localization/translation: /legal/privacy-it.php

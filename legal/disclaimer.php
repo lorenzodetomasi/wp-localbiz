@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Cookie Policy
- * The template for displaying cookie law policy.
+ * Template Name: Disclaimer
+ * The template for displaying legal disclaimer.
  *
  * @package WordPress
  * @subpackage Isotype_Theme
@@ -29,7 +29,7 @@ while ( have_posts() ) : the_post();
 <?php
 	the_title( '<h1 class="color1">', '</h1>' );
 	the_content();
-	include(locate_template('privacy/cookies-it.php'));
+	include(locate_template('legal/disclaimer-it.php'));
 	wp_link_pages( array(
 		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'isotype' ) . '</span>',
 		'after'       => '</div>',

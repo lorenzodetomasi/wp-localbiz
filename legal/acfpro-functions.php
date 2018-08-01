@@ -1,5 +1,4 @@
 <?php
-global $site_url;
 if(function_exists('get_field')){
 	$privacy_page_id = get_field('privacy_page_id', 'option');
 	$cookies_page_id = get_field('cookies_page_id', 'option');
@@ -23,3 +22,4 @@ if($privacy_responsible_id){
 	$privacy_responsible_address = get_user_meta($privacy_responsible_id, 'address', true)['address'];
 	$privacy_responsible_email = get_userdata($privacy_responsible_id)->user_email;
 }
+?>

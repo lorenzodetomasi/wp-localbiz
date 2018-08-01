@@ -29,7 +29,7 @@ while ( have_posts() ) : the_post();
 <?php
 	the_title( '<h1 class="color1">', '</h1>' );
 	the_content();
-	include(locate_template('privacy/privacy-it.php'));
+	include(locate_template('legal/privacy-it.php'));
 	wp_link_pages( array(
 		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'isotype' ) . '</span>',
 		'after'       => '</div>',

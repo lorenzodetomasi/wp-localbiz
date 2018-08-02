@@ -1,4 +1,8 @@
 <?php
+// #Google
+$google_api_key = 'your-api-key';
+$googlemaps_api_key = $google_api_key;
+
 // #Organization
 include_once('organization/cptui.php');
 include_once('organization/acfpro.php');

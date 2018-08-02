@@ -14,8 +14,8 @@
  * 9. User Data
  */
  function isotype_acf_google_map_api( $api ){
-	global $google_api_key;
-	$api['key'] = $google_api_key;
+	global $googlemaps_api_key;
+	$api['key'] = $googlemaps_api_key;
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'isotype_acf_google_map_api');
